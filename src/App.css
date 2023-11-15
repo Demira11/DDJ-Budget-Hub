@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.background-image {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.green-container {
+  flex: 1;
+  background-color: #043649;
+  color: #d4b0b5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+h1,
+p {
+  color: white;
+}
