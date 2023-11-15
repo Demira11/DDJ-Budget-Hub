@@ -1,6 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  let navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    console.log("submitted");
+    navigate("/budget");
+  }
+
   return (
     <div className="login-container">
       <img
@@ -14,7 +24,7 @@ function Login() {
         <p>Create an account</p>
         <p className="small-text">Let's get started</p>
 
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <div className="input-container">
             <label htmlFor="name">Name</label>
             <input type="text" id="name" placeholder="Enter your name" />
@@ -34,12 +44,8 @@ function Login() {
             />
           </div>
 
-          <button type="button" className="sign-up-button">
+          <button type="submit" className="sign-up-button">
             Sign Up
-          </button>
-
-          <button type="button" className="continue-button">
-            Continue with Email
           </button>
         </form>
 
