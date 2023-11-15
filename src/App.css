@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 .login-container {
   display: flex;
@@ -8,11 +9,19 @@
 }
 
 h1 {
-  padding-top: 220px;
+  padding-top: 80px;
   font-size: 35px;
 }
 p {
   color: white;
+  padding-top: 50px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.small-text-login {
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 .background-image {
@@ -34,13 +43,24 @@ p {
   flex-direction: column;
 }
 
-.input-container {
-  margin-bottom: 10px;
-}
+/* .input-container {
+  
+} */
 
 label {
   margin-bottom: 5px;
 }
+
+.sign-up-button {
+  width: 153px;
+  height: 40px;
+  margin-left: 90px;
+  border-radius: 10px;
+  background-color: #9d775c;
+  border: solid 1px white;
+}
+
+/* Page 2 starts here */
 
 .budget-container {
   background-color: #043649;
@@ -93,4 +113,8 @@ label {
 
 .small-text a {
   color: #9d775c;
+}
+
+label {
+  margin-right: 5px;
 }

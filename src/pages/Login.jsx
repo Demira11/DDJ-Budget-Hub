@@ -22,26 +22,22 @@ function Login() {
       <div className="green-container">
         <h1>DDJ Budget Hub</h1>
         <p>Create an account</p>
-        <p className="small-text">Let's get started</p>
+        <p className="small-text-login">Let's get started</p>
 
         <form className="form-container" onSubmit={handleSubmit}>
           <div className="input-container">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="Enter your name" />
+            <label htmlFor="name"></label>
+            <input type="text" id="name" placeholder="Name" />
           </div>
 
           <div className="input-container">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" />
+            <label htmlFor="email"></label>
+            <input type="email" id="email" placeholder="Email" />
           </div>
 
           <div className="input-container">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password"
-            />
+            <label htmlFor="password"></label>
+            <input type="password" id="password" placeholder="Password" />
           </div>
 
           <button type="submit" className="sign-up-button">
