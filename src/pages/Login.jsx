@@ -1,4 +1,5 @@
 import React from "react";
+import Budget from "./Budget";
 
 function Login() {
   return (

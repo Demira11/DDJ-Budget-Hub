@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 .login-container {
   display: flex;
@@ -33,7 +34,58 @@ label {
   margin-bottom: 5px;
 }
 
-h1,
 p {
   color: white;
+}
+
+.budget-container {
+  background-color: #043649;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #9d775c;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.budget-title {
+  margin-top: 20px;
+}
+
+.budget-form {
+  margin-top: 20px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-categories,
+.right-categories {
+  width: 48%;
+}
+
+.save-button {
+  margin-top: 20px;
+  background-color: #9d775c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.small-text a {
+  color: #9d775c;
 }
