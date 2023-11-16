@@ -22,7 +22,9 @@ function Budget() {
         <div className="nav-item">Overview</div>
       </nav>
 
-      <h2 className="budget-title">Budget Planner</h2>
+      <h2 className="budget-title">
+        Budget <span>Planner</span>
+      </h2>
 
       <form className="budget-form">
         <div className="input-container">
