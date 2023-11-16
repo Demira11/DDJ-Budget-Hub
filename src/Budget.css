@@ -4,6 +4,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
 .budget-container {
   background-color: #043649;
   color: white;
@@ -76,13 +81,33 @@ input::placeholder {
 
 .left-categories input,
 .right-categories input {
-  width: calc(80% - 15px);
+  width: calc(80% - 30px);
   height: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 20px;
-  border-radius: 25px;
+  border-radius: 60px;
   background-color: #043649;
   border: 2px solid #9d775c;
+}
+
+.left-categories label,
+.right-categories label {
+  position: absolute;
+  color: #d4b0b5;
+  font-size: 16px;
+  margin-left: -335px;
+  margin-top: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 40px;
+  border-radius: 28px;
+  border: solid 2px #9d775c;
+  padding-left: 15px;
+  background-color: #043649;
+  color: white;
+  font-size: 16px;
 }
 
 #grossIncome:focus,
@@ -108,3 +133,18 @@ input::placeholder {
 .save-button:hover {
   background-color: #d4b0b5;
 }
+
+.input-container label {
+  position: absolute;
+  top: -30px;
+  left: 665px;
+  color: #d4b0b5;
+  font-size: 16px;
+}
+
+/* .input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  top: -0px;
+  font-size: 12px;
+  color: #9d775c;
+} */
