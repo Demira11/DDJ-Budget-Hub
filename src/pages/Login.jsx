@@ -20,10 +20,10 @@ function Login() {
       />
 
       <div className="green-container">
-        <h1>DDJ Budget Hub</h1>
+        <h1>𑁍DDJ Budget Hub</h1>
+
         <p>Create an account</p>
         <p className="small-text-login">Let's get started</p>
-
         <form className="form-container" onSubmit={handleSubmit}>
           <div className="input-container">
             <label htmlFor="name"></label>
@@ -44,7 +44,6 @@ function Login() {
             Sign Up
           </button>
         </form>
-
         <p className="small-text">
           Already have an account? <a href="/login">Log In</a>
         </p>
