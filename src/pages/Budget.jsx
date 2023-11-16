@@ -12,7 +12,7 @@ function Budget() {
 
       <form className="budget-form">
         <div className="input-container">
-          <label htmlFor="grossIncome"></label>
+          <label htmlFor="grossIncome">Gross Income</label>
           <input
             type="text"
             id="grossIncome"
