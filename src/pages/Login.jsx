@@ -20,7 +20,7 @@ function Login() {
       />
 
       <div className="green-container">
-        <h1>𑁍DDJ Budget Hub</h1>
+        <h1>𑁍DDJ Budget Hub </h1>
 
         <p className="small-text-login">Welcome</p>
         <form className="form-container" onSubmit={handleSubmit}>

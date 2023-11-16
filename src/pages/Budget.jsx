@@ -23,12 +23,15 @@ function Budget() {
       </nav>
 
       <h2 className="budget-title">
-        Budget <span>Planner</span>
+        Budget{" "}
+        <span>
+          <em>Planner</em>
+        </span>
       </h2>
 
       <form className="budget-form">
         <div className="input-container">
-          <label htmlFor="grossIncome">Gross Income</label>
+          <label htmlFor="grossIncome"></label>
           <input
             type="text"
             id="grossIncome"
@@ -45,10 +48,10 @@ function Budget() {
           </div>
 
           <div className="right-categories">
-            <input type="text" placeholder="Entertainment" />
+            <input type="text" placeholder=" Savings" />
             <input type="text" placeholder="Banks" />
-            <input type="text" placeholder="Misc" />
-            <input type="text" placeholder="Savings" />
+            <input type="text" placeholder="Entertainment" />
+            <input type="text" placeholder=" Miscellaneous" />
           </div>
         </div>
 

@@ -32,12 +32,14 @@
 
 .budget-title {
   font-size: 50px;
-  font-family: "Cedarville Cursive", cursive;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
 }
 
 span {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: lighter;
+  color: #9d775c;
 }
 
 .budget-form {
@@ -46,6 +48,19 @@ span {
 
 .label {
   margin-bottom: 5px;
+}
+
+#grossIncome {
+  width: 300px;
+  height: 40px;
+  border-radius: 28px;
+  border: solid 2px #9d775c;
+}
+
+input::placeholder {
+  color: #d4b0b5;
+  font-size: 20px;
+  text-align: center;
 }
 
 .category-container {
@@ -59,10 +74,37 @@ span {
   width: 48%;
 }
 
+.left-categories input,
+.right-categories input {
+  width: calc(80% - 15px);
+  height: 40px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  border-radius: 25px;
+  background-color: #043649;
+  border: 2px solid #9d775c;
+}
+
+#grossIncome:focus,
+.left-categories input:focus,
+.right-categories input:focus {
+  color: white;
+  font-size: 20px;
+}
+
 .save-button {
   margin-top: 20px;
-  background-color: #9d775c;
-  color: white;
+  background-color: gray;
+  color: #043649;
   padding: 10px;
+  width: 400px;
   cursor: pointer;
+  color: black;
+  border: 2px solid #9d775c;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.save-button:hover {
+  background-color: #d4b0b5;
 }
