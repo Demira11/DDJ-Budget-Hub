@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.budget-container {
+  background-color: #043649;
+  color: white;
+  /* Remove padding to make the background color cover the entire page */
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #9d775c;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.budget-title {
+  margin-top: 20px;
+}
+
+.budget-form {
+  margin-top: 20px;
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left-categories,
+.right-categories {
+  width: 48%;
+}
+
+.save-button {
+  margin-top: 20px;
+  background-color: #9d775c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
-import "./App.css";
+import "./Login.css";
+import "./Budget.css";
 import Login from "./pages/Login.jsx";
 import Budget from "./pages/Budget.jsx";
 import { Routes, Route } from "react-router-dom";
