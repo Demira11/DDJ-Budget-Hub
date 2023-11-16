@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function SignUp() {
   let navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -22,8 +22,14 @@ function Login() {
       <div className="green-container">
         <h1>𑁍DDJ Budget Hub</h1>
 
-        <p className="small-text-login">Welcome</p>
+        <p>Create an account</p>
+        <p className="small-text-login">Let's get started</p>
         <form className="form-container" onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor="name"></label>
+            <input type="text" id="name" placeholder="Name" />
+          </div>
+
           <div className="input-container">
             <label htmlFor="email"></label>
             <input type="email" id="email" placeholder="Email" />
@@ -35,12 +41,15 @@ function Login() {
           </div>
 
           <button type="submit" className="sign-up-button">
-            Log In
+            Sign Up
           </button>
         </form>
+        <p className="small-text">
+          Already have an account? <a href="/login">Log In</a>
+        </p>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;

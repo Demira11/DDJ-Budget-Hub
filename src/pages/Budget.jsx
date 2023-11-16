@@ -1,11 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Budget() {
+  let navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    console.log("submitted");
+    navigate("/login");
+  }
+
   return (
     <div className="budget-container">
       <nav className="navbar">
-        <div class="nav-title">𑁍DDJ Budget Hub</div>
-        <div className="nav-item">Home</div> &nbsp; &nbsp; &nbsp; &nbsp;
+        <div className="nav-item" onClick={handleSubmit}>
+          Home
+        </div>
         <div className="nav-item">Overview</div>
       </nav>
 
