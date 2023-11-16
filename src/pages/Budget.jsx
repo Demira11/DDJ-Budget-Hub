@@ -19,7 +19,7 @@ function Budget() {
           Home
         </div>{" "}
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <div className="nav-item">Overview</div>
+        <div className="nav-item">Chart</div>
       </nav>
 
       <h2 className="budget-title">
