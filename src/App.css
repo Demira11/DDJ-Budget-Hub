@@ -24,6 +24,17 @@ p {
   font-size: 15px;
 }
 
+.small-text a {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.small-text {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
 .background-image {
   width: 75%;
   height: 100%;
@@ -53,11 +64,12 @@ label {
 
 .sign-up-button {
   width: 153px;
-  height: 40px;
+  height: 30px;
   margin-left: 90px;
-  border-radius: 10px;
+  border-radius: 35px;
   background-color: #9d775c;
-  border: solid 1px white;
+  border: solid 1px #9d775c;
+  color: white;
 }
 
 /* Page 2 starts here */
@@ -109,10 +121,6 @@ label {
   color: white;
   padding: 10px;
   cursor: pointer;
-}
-
-.small-text a {
-  color: #9d775c;
 }
 
 label {
