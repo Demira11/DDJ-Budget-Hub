@@ -48,10 +48,10 @@ function Budget() {
           </div>
 
           <div className="right-categories">
-            <input type="text" placeholder="Entertainment" />
+            <input type="text" placeholder=" Savings" />
             <input type="text" placeholder="Banks" />
-            <input type="text" placeholder="Misc" />
-            <input type="text" placeholder="Savings" />
+            <input type="text" placeholder="Entertainment" />
+            <input type="text" placeholder=" Miscellaneous" />
           </div>
         </div>
 
