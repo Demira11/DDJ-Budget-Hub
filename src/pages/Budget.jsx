@@ -14,9 +14,11 @@ function Budget() {
   return (
     <div className="budget-container">
       <nav className="navbar">
+        <div class="nav-title">𑁍DDJ Budget Hub</div>
         <div className="nav-item" onClick={handleSubmit}>
           Home
-        </div>
+        </div>{" "}
+        &nbsp; &nbsp; &nbsp; &nbsp;
         <div className="nav-item">Overview</div>
       </nav>
 

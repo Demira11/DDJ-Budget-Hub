@@ -18,21 +18,26 @@
   justify-content: end;
 }
 
-.nav-item {
-  cursor: pointer;
-  padding-right: 30px;
+.nav-title {
+  color: #d4b0b5;
+  margin-right: 1060px;
+  font-weight: bolder;
 }
 
-/* h1 {
-  font-size: 30px;
-  color: #d4b0b5;
-  text-align: left;
-} */
+.nav-item {
+  cursor: pointer;
+  padding-right: 35px;
+  font-weight: bold;
+}
 
 .budget-title {
   font-size: 50px;
   font-family: "Cedarville Cursive", cursive;
   color: white;
+}
+
+span {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .budget-form {
