@@ -7,23 +7,32 @@
 .budget-container {
   background-color: #043649;
   color: white;
-  /* Remove padding to make the background color cover the entire page */
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .navbar {
   background-color: #9d775c;
   display: flex;
-  padding: 10px;
-  justify-content: space-between;
+  padding: 20px;
+  justify-content: end;
 }
 
 .nav-item {
   cursor: pointer;
+  padding-right: 30px;
 }
 
+/* h1 {
+  font-size: 30px;
+  color: #d4b0b5;
+  text-align: left;
+} */
+
 .budget-title {
-  margin-top: 20px;
+  font-size: 50px;
+  font-family: "Cedarville Cursive", cursive;
+  color: white;
 }
 
 .budget-form {
