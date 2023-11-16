@@ -1,5 +1,6 @@
 import "./Login.css";
 import "./Budget.css";
+import "./SignUp.css";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import Budget from "./pages/Budget.jsx";
