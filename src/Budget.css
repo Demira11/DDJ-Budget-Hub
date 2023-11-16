@@ -18,6 +18,13 @@
   justify-content: end;
 }
 
+.nav-title {
+  color: #d4b0b5;
+  margin-right: 1060px;
+
+  font-weight: bolder;
+}
+
 .nav-item {
   cursor: pointer;
   padding-right: 30px;

@@ -4,7 +4,7 @@ function Budget() {
   return (
     <div className="budget-container">
       <nav className="navbar">
-        {/* <h1>𑁍DDJ Budget Hub</h1> */}
+        <div class="nav-title">𑁍DDJ Budget Hub</div>
         <div className="nav-item">Home</div> &nbsp; &nbsp; &nbsp; &nbsp;
         <div className="nav-item">Overview</div>
       </nav>
