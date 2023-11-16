@@ -80,7 +80,7 @@ input::placeholder {
   height: 40px;
   margin-bottom: 30px;
   margin-top: 20px;
-  border-radius: 20px;
+  border-radius: 25px;
   background-color: #043649;
   border: 2px solid #9d775c;
 }
@@ -98,9 +98,13 @@ input::placeholder {
   color: #043649;
   padding: 10px;
   width: 400px;
-
   cursor: pointer;
   color: black;
   border: 2px solid #9d775c;
   font-size: 20px;
+  border-radius: 3px;
+}
+
+.save-button:hover {
+  background-color: #d4b0b5;
 }
