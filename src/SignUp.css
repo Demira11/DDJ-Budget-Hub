@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.background-image {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.green-container {
+  flex: 1;
+  background-color: #043649;
+  color: #d4b0b5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding-top: 80px;
+  font-size: 30px;
+}
+p {
+  color: white;
+  padding-top: 50px;
+  font-size: 19px;
+  font-weight: bold;
+}
+.input-container input {
+  width: 80%;
+  height: 30px;
+  border-radius: 4px;
+  border: 1px solid white;
+  background-color: #043649;
+  padding-left: 15px;
+  color: #d4b0b5;
+}
+
+input::placeholder {
+  color: #d4b0b5;
+  font-size: 15px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.small-text-login {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.small-text a {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.small-text {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.sign-up-button {
+  width: 288px;
+  height: 42px;
+  margin-left: 22px;
+  border-radius: 35px;
+  background-color: #9d775c;
+  border: solid 1px #9d775c;
+  color: white;
+  font-size: 18px;
+}
+
+.sign-up-button:hover {
+  cursor: pointer;
+  background-color: #043649;
+  color: #9d775c;
+}
