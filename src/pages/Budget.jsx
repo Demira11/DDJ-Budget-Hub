@@ -10,6 +10,14 @@ function Budget() {
     console.log("submitted");
     navigate("/login");
   }
+  let navigatee = useNavigate();
+
+  function handleChart(e) {
+    e.preventDefault();
+
+    console.log("submitted");
+    navigatee("/chartPage");
+  }
 
   return (
     <div className="budget-container">
@@ -19,7 +27,9 @@ function Budget() {
           Home
         </div>{" "}
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <div className="nav-item">Overview</div>
+        <div className="nav-item" onClick={handleChart}>
+          Chart
+        </div>
       </nav>
 
       <h2 className="budget-title">
