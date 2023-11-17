@@ -23,8 +23,9 @@
 }
 
 h1 {
-  padding-top: 80px;
+  padding-top: 20px;
   font-size: 30px;
+  color: #d4b0b5;
 }
 p {
   color: white;
@@ -52,7 +53,7 @@ input::placeholder {
 
 .small-text-login {
   font-weight: lighter;
-  font-size: 15px;
+  font-size: 35px;
 }
 
 .small-text a {
