@@ -1,3 +1,15 @@
+import{
+  Chart as ChartJS,
+  ArcElement,
+  ToolTip,
+  Legend
+}
+
+
+
+
+
+
 // import React, { useState } from "react";
 // import { Doughnut } from "react-chartjs-2";
 // import { useNavigate } from "react-router-dom";
