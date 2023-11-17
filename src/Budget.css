@@ -15,6 +15,7 @@
   color: white;
   box-sizing: border-box;
   height: 100vh;
+  text-decoration: none;
 }
 
 .navbar {
@@ -40,6 +41,7 @@
   font-size: 50px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
+  text-decoration: none;
 }
 
 span {

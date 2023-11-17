@@ -1,35 +1,36 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Budget() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
 
-    console.log("submitted");
-    navigate("/login");
-  }
-  let navigatee = useNavigate();
+  //   console.log("submitted");
+  //   navigate("/login");
+  // }
 
-  function handleChart(e) {
-    e.preventDefault();
+  // let navigatee = useNavigate();
 
-    console.log("submitted");
-    navigatee("/chartPage");
-  }
+  // function handleChart(e) {
+  //   e.preventDefault();
+
+  //   console.log("submitted");
+  //   navigatee("/chartPage");
+  // }
 
   return (
     <div className="budget-container">
       <nav className="navbar">
         <div class="nav-title">𑁍DDJ Budget Hub</div>
-        <div className="nav-item" onClick={handleSubmit}>
-          Home
-        </div>{" "}
+        <NavLink to="/budget" className="nav-item">
+          Budget
+        </NavLink>
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <div className="nav-item" onClick={handleChart}>
+        <NavLink to="/chartPage" className="nav-item">
           Chart
-        </div>
+        </NavLink>
       </nav>
 
       <h2 className="budget-title">
