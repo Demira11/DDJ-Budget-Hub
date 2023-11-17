@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
+// import DoughnutChart from "../components/DoughnutChart";
 
 function ChartPage({ budgetStatus }) {
-  let navigate = useNavigate();
-  const [chartRef, setChartRef] = useState(null);
-
-  useEffect(() => {
-    return () => {
-      // Destroy the chart when the component unmounts
-      const chart = chartRef.chartInstance;
-      chart.destroy();
-    };
-  }, [chartRef]);
+  const navigate = useNavigate();
+  const [key, setKey] = useState(0); // State to force remount
 
   function handleBudgetClick(e) {
     e.preventDefault();
@@ -36,9 +29,17 @@ function ChartPage({ budgetStatus }) {
     ],
   };
 
+  const destroyChart = () => {
+    setKey((prevKey) => prevKey + 1); // Update key to force remount
+  };
+
+  const chartOptions = {
+    maintainAspectRatio: false, // Set to false to ensure a perfect circle
+  };
+
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar-3">
         <div className="nav-title">𑁍 DDJ Budget Hub</div>
         <div className="nav-item" onClick={handleBudgetClick}>
           Budget
@@ -47,7 +48,12 @@ function ChartPage({ budgetStatus }) {
         <div className="nav-item">Log Out</div>
       </nav>
       <h2>Budget Status</h2>
-      <Doughnut ref={setChartRef} data={data} />
+      <Doughnut
+        key={key} // Key to force remount
+        data={data}
+        options={chartOptions} // Chart.js options
+        onAnimationComplete={destroyChart} // Destroy chart after animation
+      />
     </div>
   );
 }
