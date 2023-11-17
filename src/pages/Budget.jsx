@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Budget() {
   // let navigate = useNavigate();
 
-
   // function handleSubmit(e) {
   //   e.preventDefault();
 
@@ -35,11 +34,13 @@ function Budget() {
     navigate("/chartPage");
   };
 
-
   return (
     <div className="budget-container">
       <nav className="navbar">
         <div class="nav-title">𑁍DDJ Budget Hub</div>
+        <NavLink to="/" className="nav-item">
+          Home
+        </NavLink>
         <NavLink to="/budget" className="nav-item">
           Budget
         </NavLink>
