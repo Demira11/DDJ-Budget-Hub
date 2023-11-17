@@ -7,6 +7,7 @@ import Login from "./pages/Login.jsx";
 import Budget from "./pages/Budget.jsx";
 import ChartPage from "./pages/ChartPage.jsx";
 import { Routes, Route } from "react-router-dom";
+import "chart.js/auto";
 
 function App() {
   return (
