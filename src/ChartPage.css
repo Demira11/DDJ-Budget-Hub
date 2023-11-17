@@ -19,9 +19,16 @@
   font-weight: bolder;
 }
 
+/* .nav-item {
+  color: white;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+} */
+
 .nav-item {
   color: white;
   padding: 5px 10px;
+  margin: 0 10px;
   transition: background-color 0.3s ease;
 }
 
@@ -104,6 +111,16 @@ h1 {
 }
 
 .edit-button {
+  background-color: grey;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.delete-button,
+.edit-button,
+.logout-button {
   background-color: grey;
   color: white;
   border: 1px solid white;

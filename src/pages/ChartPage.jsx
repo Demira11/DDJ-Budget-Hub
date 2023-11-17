@@ -30,17 +30,19 @@ function ChartPage() {
   return (
     <div className="chartPage-container">
       <nav className="navbar">
-        <div class="nav-title">𑁍DDJ Budget Hub</div>
+        <div className="nav-title">𑁍DDJ Budget Hub</div>
         <NavLink to="/budget" className="nav-item">
           Budget
         </NavLink>
-        &nbsp; &nbsp; &nbsp; &nbsp;
         <NavLink to="/chartPage" className="nav-item">
           Chart
         </NavLink>
+        <NavLink to="/logout" className="nav-item">
+          Logout
+        </NavLink>
       </nav>
 
-      <h1 class="chart-title">Overview Chart</h1>
+      <h1 className="chart-title">Overview Chart</h1>
 
       <div className="chart-container">
         <Doughnut className="chart" data={data} options={options}></Doughnut>
