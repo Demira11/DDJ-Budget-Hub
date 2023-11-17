@@ -4,14 +4,14 @@
   font-family: "Poppins", sans-serif;
 }
 
-.navbar {
+/* .navbar {
   background-color: #043649;
   color: white;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
 .nav-title {
   font-size: 20px;

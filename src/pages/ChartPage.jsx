@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ChartPage({ budgetStatus }) {
   let navigate = useNavigate();
+  const [chartRef, setChartRef] = useState(null);
 
-  function handleBudgetClick() {
+  useEffect(() => {
+    return () => {
+      // Destroy the chart when the component unmounts
+      const chart = chartRef.chartInstance;
+      chart.destroy();
+    };
+  }, [chartRef]);
+
+  function handleBudgetClick(e) {
+    e.preventDefault();
+    console.log("submitted");
     navigate("/budget");
   }
 
@@ -28,16 +39,15 @@ function ChartPage({ budgetStatus }) {
   return (
     <div>
       <nav className="navbar">
-        <div className="nav-title">𑁍DDJ Budget Hub</div>
+        <div className="nav-title">𑁍 DDJ Budget Hub</div>
         <div className="nav-item" onClick={handleBudgetClick}>
           Budget
         </div>{" "}
         &nbsp; &nbsp; &nbsp; &nbsp;
         <div className="nav-item">Log Out</div>
       </nav>
-
       <h2>Budget Status</h2>
-      <Doughnut data={data} />
+      <Doughnut ref={setChartRef} data={data} />
     </div>
   );
 }
