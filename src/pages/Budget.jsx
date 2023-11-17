@@ -11,7 +11,7 @@ function Budget() {
     navigate("/login");
   };
 
-  const handleChart = async (e) => {
+  const save = async (e) => {
     e.preventDefault();
 
     console.log("submitted");
@@ -102,7 +102,7 @@ function Budget() {
           </div>
         </div>
 
-        <button type="button" className="save-button">
+        <button type="button" className="save-button" onClick={save}>
           Save
         </button>
       </form>
