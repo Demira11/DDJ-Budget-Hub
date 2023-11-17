@@ -33,3 +33,21 @@ h2 {
   font-size: 28px;
   color: #043649;
 }
+
+.chart-container {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.Doughnut-container {
+  position: relative;
+  width: 300px; /* Set the width of the container */
+  height: 300px; /* Set the height of the container */
+}
+
+.Doughnut-chart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

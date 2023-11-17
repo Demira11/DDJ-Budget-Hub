@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
+// import DoughnutChart from "../components/DoughnutChart";
 
 function ChartPage({ budgetStatus }) {
   const navigate = useNavigate();
@@ -32,6 +33,10 @@ function ChartPage({ budgetStatus }) {
     setKey((prevKey) => prevKey + 1); // Update key to force remount
   };
 
+  const chartOptions = {
+    maintainAspectRatio: false, // Set to false to ensure a perfect circle
+  };
+
   return (
     <div>
       <nav className="navbar-3">
@@ -46,6 +51,7 @@ function ChartPage({ budgetStatus }) {
       <Doughnut
         key={key} // Key to force remount
         data={data}
+        options={chartOptions} // Chart.js options
         onAnimationComplete={destroyChart} // Destroy chart after animation
       />
     </div>
