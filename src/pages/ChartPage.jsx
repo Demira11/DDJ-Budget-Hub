@@ -34,7 +34,7 @@ function ChartPage({ budgetStatus }) {
 
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar-3">
         <div className="nav-title">𑁍 DDJ Budget Hub</div>
         <div className="nav-item" onClick={handleBudgetClick}>
           Budget
