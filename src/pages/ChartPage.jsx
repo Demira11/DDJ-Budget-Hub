@@ -9,7 +9,7 @@ function ChartPage() {
       {
         label: "Poll",
         data: [3, 6],
-        backgroundColor: ["green", "red"],
+        backgroundColor: ["pink", "beige"],
         borderColor: ["white"],
       },
     ],
@@ -44,6 +44,11 @@ function ChartPage() {
 
       <div className="chart-container">
         <Doughnut className="chart" data={data} options={options}></Doughnut>
+      </div>
+
+      <div className="button-container">
+        <button className="button delete-button">Delete</button>
+        <button className="button edit-button">Edit</button>
       </div>
     </div>
   );
