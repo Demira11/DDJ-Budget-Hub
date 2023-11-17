@@ -4,20 +4,19 @@ import { useNavigate } from "react-router-dom";
 function Budget() {
   let navigate = useNavigate();
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log("submitted");
     navigate("/login");
-  }
-  let navigatee = useNavigate();
+  };
 
-  function handleChart(e) {
+  const handleChart = async (e) => {
     e.preventDefault();
 
     console.log("submitted");
-    navigatee("/chartPage");
-  }
+    navigate("/chartPage");
+  };
 
   return (
     <div className="budget-container">
