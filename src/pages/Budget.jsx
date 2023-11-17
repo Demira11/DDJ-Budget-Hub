@@ -41,7 +41,7 @@ function Budget() {
 
       <form className="budget-form">
         <div className="input-container">
-          <label htmlFor="grossIncome">Enter gross income</label>
+          <label htmlFor="grossIncome">Enter Gross Income</label>
           <input type="text" id="grossIncome" />
         </div>
 
