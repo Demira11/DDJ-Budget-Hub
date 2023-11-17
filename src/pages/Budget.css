@@ -1,0 +1,144 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.budget-container {
+  background-color: #043649;
+  color: white;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #9d775c;
+  display: flex;
+  padding: 20px;
+  justify-content: end;
+}
+
+.nav-title {
+  color: #d4b0b5;
+  margin-right: 1060px;
+  font-weight: bolder;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding-right: 35px;
+  font-weight: bold;
+}
+
+.budget-title {
+  font-size: 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+span {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: lighter;
+  color: #9d775c;
+}
+
+.budget-form {
+  margin-top: 20px;
+}
+
+.label {
+  margin-bottom: 5px;
+}
+
+#grossIncome {
+  width: 300px;
+  height: 40px;
+  border-radius: 28px;
+  border: solid 2px #9d775c;
+}
+
+input::placeholder {
+  color: #d4b0b5;
+  font-size: 20px;
+  text-align: center;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left-categories,
+.right-categories {
+  width: 48%;
+}
+
+.left-categories input,
+.right-categories input {
+  width: calc(80% - 30px);
+  height: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 60px;
+  background-color: #043649;
+  border: 2px solid #9d775c;
+}
+
+.left-categories label,
+.right-categories label {
+  position: absolute;
+  color: #d4b0b5;
+  font-size: 16px;
+  margin-left: -335px;
+  margin-top: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 40px;
+  border-radius: 28px;
+  border: solid 2px #9d775c;
+  padding-left: 15px;
+  background-color: #043649;
+  color: white;
+  font-size: 16px;
+}
+
+#grossIncome:focus,
+.left-categories input:focus,
+.right-categories input:focus {
+  color: white;
+  font-size: 20px;
+}
+
+.save-button {
+  margin-top: 20px;
+  background-color: gray;
+  color: #043649;
+  padding: 10px;
+  width: 400px;
+  cursor: pointer;
+  color: black;
+  border: 2px solid #9d775c;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.save-button:hover {
+  background-color: #d4b0b5;
+}
+
+.input-container label {
+  position: absolute;
+  top: -30px;
+  left: 665px;
+  color: #d4b0b5;
+  font-size: 16px;
+}
