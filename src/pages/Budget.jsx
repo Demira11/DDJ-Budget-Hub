@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Budget() {
   // let navigate = useNavigate();
 
+
   // function handleSubmit(e) {
   //   e.preventDefault();
 
@@ -19,6 +20,21 @@ function Budget() {
   //   console.log("submitted");
   //   navigatee("/chartPage");
   // }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log("submitted");
+    navigate("/login");
+  };
+
+  const save = async (e) => {
+    e.preventDefault();
+
+    console.log("submitted");
+    navigate("/chartPage");
+  };
+
 
   return (
     <div className="budget-container">
@@ -42,7 +58,7 @@ function Budget() {
 
       <form className="budget-form">
         <div className="input-container">
-          <label htmlFor="grossIncome">Enter gross income</label>
+          <label htmlFor="grossIncome">Enter Gross Income</label>
           <input type="text" id="grossIncome" />
         </div>
 
@@ -104,7 +120,7 @@ function Budget() {
           </div>
         </div>
 
-        <button type="button" className="save-button">
+        <button type="button" className="save-button" onClick={save}>
           Save
         </button>
       </form>
