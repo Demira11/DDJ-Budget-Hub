@@ -30,7 +30,7 @@ function ChartPage() {
   return (
     <div className="chartPage-container">
       <nav className="navbar">
-        <div className="nav-title">𑁍DDJ Budget Hub</div>
+        <div className="nav-title-chart">𑁍DDJ Budget Hub</div>
         <NavLink to="/" className="nav-item">
           Home
         </NavLink>

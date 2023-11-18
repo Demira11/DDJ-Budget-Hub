@@ -13,17 +13,13 @@
   align-items: center;
 }
 
-.nav-title {
+.nav-title-chart {
   font-size: 20px;
-
+  white-space: nowrap;
   font-weight: bolder;
+  color: #d4b0b5;
+  margin-right: 950px;
 }
-
-/* .nav-item {
-  color: white;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease;
-} */
 
 .nav-item {
   color: white;
