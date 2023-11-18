@@ -41,9 +41,9 @@ function Budget() {
         <NavLink to="/" className="nav-item">
           Home
         </NavLink>
-        <NavLink to="/budget" className="nav-item">
+        {/* <NavLink to="/budget" className="nav-item">
           Budget
-        </NavLink>
+        </NavLink> */}
         &nbsp; &nbsp; &nbsp; &nbsp;
         <NavLink to="/chartPage" className="nav-item">
           Chart
