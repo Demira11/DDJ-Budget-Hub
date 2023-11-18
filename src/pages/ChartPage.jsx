@@ -31,12 +31,13 @@ function ChartPage() {
     <div className="chartPage-container">
       <nav className="navbar">
         <div className="nav-title">𑁍DDJ Budget Hub</div>
+        <NavLink to="/" className="nav-item">
+          Home
+        </NavLink>
         <NavLink to="/budget" className="nav-item">
           Budget
         </NavLink>
-        <NavLink to="/chartPage" className="nav-item">
-          Chart
-        </NavLink>
+
         <NavLink to="/logout" className="nav-item">
           Logout
         </NavLink>
