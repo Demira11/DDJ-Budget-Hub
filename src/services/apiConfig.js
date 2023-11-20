@@ -1,20 +1,27 @@
 import axios from "axios";
 
-let apiUrl;
-
-const apiUrls = {
-  production: "https://ddj-budget-hub-app-ac59ef042ed9.herokuapp.com/api",
-  development: "https://ddj-budget-hub-app-ac59ef042ed9.herokuapp.com/api",
+const getToken = () => {
+  return new Promise((resolve) => {
+    resolve(`Bearer ${localStorage.getItem("token") || null}`);
+  });
 };
 
-if (window.location.hostname === "localhost") {
-  apiUrl = apiUrls.development;
-} else {
-  apiUrl = apiUrls.production;
-}
-
 const api = axios.create({
-  baseURL: apiUrl,
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? "https://ddj-budget-hub-app-ac59ef042ed9.herokuapp.com/api"
+      : "https://ddj-budget-hub-app-ac59ef042ed9.herokuapp.com/api",
 });
+
+api.interceptors.request.use(
+  async function (config) {
+    config.headers["Authorization"] = await getToken();
+    return config;
+  },
+  function (error) {
+    console.log("Request error: ", error);
+    return Promise.reject(error);
+  }
+);
 
 export default api;

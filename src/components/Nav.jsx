@@ -2,10 +2,17 @@ import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/cats">Overview</NavLink>
-      <NavLink to="/add-cat">Log Out</NavLink>
+    <nav className="navbar">
+      <div class="nav-title">𑁍DDJ Budget Hub</div>
+      <NavLink className="nav-item" to="/budget">
+        Budget
+      </NavLink>
+      <NavLink className="nav-item" to="/chartPage">
+        Chart
+      </NavLink>
+      <NavLink className="nav-item" to="/sign-out">
+        Sign Out
+      </NavLink>
     </nav>
   );
 }

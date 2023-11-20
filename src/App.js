@@ -10,6 +10,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import "chart.js/auto";
 import { useState, useEffect } from "react";
 import { verifyUser } from "./services/users.js";
+import Signout from "./pages/Signout.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/budget" element={<Budget setUser={setUser} />} />
         <Route path="/chartPage" element={<ChartPage setUser={setUser} />} />
+        <Route path="/sign-out" element={<Signout setUser={setUser} />} />
       </Routes>
     </div>
   );
