@@ -3,11 +3,15 @@ import {
   getBudget,
   editBudget,
   addInitialExpensesToBudget,
+  addExpense,
+  updateExpense,
+  deleteExpense,
 } from "../services/budget";
 import Nav from "../components/Nav";
 
 function Budget({ user, budget, setBudget }) {
   const [toggle, setToggle] = useState(false);
+  const [modal, setModal] = useState(false);
   const [budgetForm, setBudgetForm] = useState({
     user: user,
     income: "",
@@ -25,9 +29,19 @@ function Budget({ user, budget, setBudget }) {
     miscellaneous: "",
   });
 
+  const [expenseForm, setExpenseForm] = useState({
+    title: "",
+    cost: "",
+  });
+
+  const [editExpense, setEditExpense] = useState({
+    title: "",
+    cost: "",
+  });
+
   useEffect(() => {
     fetchBudget();
-  }, [toggle]);
+  }, [user, toggle]);
 
   async function fetchBudget() {
     const budgetData = await getBudget(user?.budgetId);
@@ -78,6 +92,55 @@ function Budget({ user, budget, setBudget }) {
     setToggle((prev) => !prev);
   }
 
+  // Expense Form Data (Individual)
+  function handleExpense(e) {
+    const { name, value } = e.target;
+
+    setExpenseForm((prevExpense) => ({
+      ...prevExpense,
+      [name]: value,
+    }));
+  }
+
+  async function handleAddExpense(e) {
+    e.preventDefault();
+
+    await addExpense(budget._id, expenseForm);
+    setExpenseForm({
+      title: "",
+      cost: "",
+    });
+    setToggle((prev) => !prev);
+  }
+
+  // Edit Expense
+  function handleEditExpense(e) {
+    const { name, value } = e.target;
+
+    setEditExpense((prevExpense) => ({
+      ...prevExpense,
+      [name]: value,
+    }));
+  }
+
+  async function modalSubmit(e) {
+    e.preventDefault();
+
+    await updateExpense(editExpense._id, editExpense);
+    setEditExpense({
+      title: "",
+      cost: "",
+    });
+    setToggle((prev) => !prev);
+    setModal(false);
+  }
+
+  // Delete Expense
+  async function handleDelete(expenseId) {
+    await deleteExpense(expenseId);
+    setToggle((prev) => !prev);
+  }
+
   return (
     <div className="budget-container">
       <Nav title="budget" />
@@ -106,14 +169,48 @@ function Budget({ user, budget, setBudget }) {
       </form>
 
       {budget?.expenses?.length ? (
-        <div>
-          {budget.expenses?.map((expense) => (
-            <div>
-              <h3>{expense.title}</h3>
-              <p>{expense.cost}</p>
-            </div>
-          ))}
-        </div>
+        <>
+          <form onSubmit={handleAddExpense} className="expense-form-container">
+            <label htmlFor="expenseTitle"></label>
+            <input
+              type="text"
+              placeholder="enter expense title"
+              id="expenseTitle"
+              name="title"
+              value={expenseForm.title}
+              onChange={handleExpense}
+            />
+            <label htmlFor="expenseCost"></label>
+            <input
+              type="text"
+              placeholder="enter expense cost"
+              id="expenseCost"
+              name="cost"
+              value={expenseForm.cost}
+              onChange={handleExpense}
+            />
+            <button type="submit">Add Expense</button>
+          </form>
+          <div className="expenses-container">
+            {budget.expenses?.map((expense, i) => (
+              <div key={i} className="expense-item">
+                <h3>{expense.title}</h3>
+                <p>{expense.cost}</p>
+                <button
+                  onClick={() => {
+                    setEditExpense(expense);
+                    setModal(true);
+                  }}
+                >
+                  EDIT
+                </button>
+                <button onClick={() => handleDelete(expense._id)}>
+                  DELETE
+                </button>
+              </div>
+            ))}
+          </div>
+        </>
       ) : (
         <form className="budget-form" onSubmit={handleInitialExpenses}>
           <div className="category-container">
@@ -226,6 +323,36 @@ function Budget({ user, budget, setBudget }) {
             Save
           </button>
         </form>
+      )}
+      {modal && (
+        <div className="modal-container">
+          <div className="modal-content">
+            <p onClick={() => setModal(false)}>X</p>
+            <div className="modal-form-container">
+              <form className="modal-form" onSubmit={modalSubmit}>
+                <label htmlFor="expenseTitle"></label>
+                <input
+                  type="text"
+                  placeholder="enter expense title"
+                  id="expenseTitle"
+                  name="title"
+                  value={editExpense.title}
+                  onChange={handleEditExpense}
+                />
+                <label htmlFor="expenseCost"></label>
+                <input
+                  type="text"
+                  placeholder="enter expense cost"
+                  id="expenseCost"
+                  name="cost"
+                  value={editExpense.cost}
+                  onChange={handleEditExpense}
+                />
+                <button type="submit">Edit Expense</button>
+              </form>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

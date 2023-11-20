@@ -6,7 +6,7 @@ import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import Budget from "./pages/Budget.jsx";
 import ChartPage from "./pages/ChartPage.jsx";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "chart.js/auto";
 import { useState, useEffect } from "react";
 import { verifyUser } from "./services/users.js";
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route
           path="/budget"
-          element={<Budget user={user} setBudget={setBudget} budget={budget} />}
+          element={<Budget user={user} budget={budget} setBudget={setBudget} />}
         />
         <Route path="/chartPage" element={<ChartPage budget={budget} />} />
         <Route path="/sign-out" element={<Signout setUser={setUser} />} />

@@ -2,7 +2,6 @@ import React from "react";
 import "../ChartPage.css";
 import Nav from "../components/Nav.jsx";
 import { PieChart, Pie, Tooltip } from "recharts";
-import { NavLink } from "react-router-dom"; // Make sure to import NavLink if you are using it
 
 const ChartPage = ({ budget }) => {
   // const data = [
@@ -33,16 +32,12 @@ const ChartPage = ({ budget }) => {
           })}
           cx="50%"
           cy="50%"
-          outerRadius={80}
+          outerRadius={175}
           fill="#8884d8"
           label
         />
         <Tooltip />
       </PieChart>
-      <div className="button-container">
-        <button className="button delete-button">Delete</button>
-        <button className="button edit-button">Edit</button>{" "}
-      </div>
     </div>
   );
 };
