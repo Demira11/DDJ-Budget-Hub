@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Nav({ title }) {
   return (
     <nav className="navbar">
-      <div class="nav-title">𑁍DDJ Budget Hub</div>
+      <div className="nav-title">𑁍DDJ Budget Hub</div>
       {title === "budget" ? (
         <NavLink className="nav-item" to="/chartPage">
           Chart

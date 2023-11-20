@@ -35,3 +35,15 @@ export const deleteBudget = async (id) => {
     console.error(error);
   }
 };
+
+export const addInitialExpensesToBudget = async (budgetId, expensesData) => {
+  try {
+    const response = await api.put(
+      `/expense/budget/${budgetId}/expenses`,
+      expensesData
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};

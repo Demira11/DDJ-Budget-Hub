@@ -4,18 +4,18 @@ import Nav from "../components/Nav.jsx";
 import { PieChart, Pie, Tooltip } from "recharts";
 import { NavLink } from "react-router-dom"; // Make sure to import NavLink if you are using it
 
-const ChartPage = () => {
-  const data = [
-    { name: "Income", value: 5000 },
-    { name: "Housing", value: 3000 },
-    { name: "Groceries", value: 600 },
-    { name: "Utilities", value: 850 },
-    { name: "Transportation", value: 730 },
-    { name: "Savings", value: 6000 },
-    { name: "Banks", value: 890 },
-    { name: "Entertainment", value: 125 },
-    { name: "Miscellaneous", value: 678 },
-  ];
+const ChartPage = ({ budget }) => {
+  // const data = [
+  //   { name: "Income", value: 5000 },
+  //   { name: "Housing", value: 3000 },
+  //   { name: "Groceries", value: 600 },
+  //   { name: "Utilities", value: 850 },
+  //   { name: "Transportation", value: 730 },
+  //   { name: "Savings", value: 6000 },
+  //   { name: "Banks", value: 890 },
+  //   { name: "Entertainment", value: 125 },
+  //   { name: "Miscellaneous", value: 678 },
+  // ];
 
   return (
     <div className="chartPage-container">
@@ -26,7 +26,11 @@ const ChartPage = () => {
         <Pie
           dataKey="value"
           isAnimationActive={true}
-          data={data}
+          data={budget.expenses.map((expense) => {
+            expense.name = expense.title;
+            expense.value = expense.cost;
+            return expense;
+          })}
           cx="50%"
           cy="50%"
           outerRadius={80}

@@ -14,6 +14,7 @@ import Signout from "./pages/Signout.jsx";
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [budget, setBudget] = useState({});
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -28,8 +29,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<SignUp setUser={setUser} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/budget" element={<Budget setUser={setUser} />} />
-        <Route path="/chartPage" element={<ChartPage setUser={setUser} />} />
+        <Route
+          path="/budget"
+          element={<Budget user={user} setBudget={setBudget} budget={budget} />}
+        />
+        <Route path="/chartPage" element={<ChartPage budget={budget} />} />
         <Route path="/sign-out" element={<Signout setUser={setUser} />} />
       </Routes>
     </div>
