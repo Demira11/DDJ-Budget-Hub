@@ -110,7 +110,7 @@ const SignUp = (props) => {
           </div>
 
           <div className="input-container">
-            <label>Password Confirmation</label>
+            <label htmlFor="Password Confirmation"></label>
             <input
               required
               name="passwordConfirmation"

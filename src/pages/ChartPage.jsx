@@ -1,5 +1,6 @@
 import React from "react";
 import "../ChartPage.css";
+import Nav from "../components/Nav.jsx";
 import { PieChart, Pie, Tooltip } from "recharts";
 import { NavLink } from "react-router-dom"; // Make sure to import NavLink if you are using it
 
@@ -18,18 +19,7 @@ const ChartPage = () => {
 
   return (
     <div className="chartPage-container">
-      <nav className="navbar">
-        <div className="nav-title-chart">𑁍DDJ Budget Hub</div>
-        <NavLink to="/" className="nav-item">
-          Home
-        </NavLink>
-        <NavLink to="/budget" className="nav-item">
-          Budget
-        </NavLink>
-        <NavLink to="/logout" className="nav-item">
-          Logout
-        </NavLink>
-      </nav>
+      <Nav />
       <h1 className="chart-title">Overview Chart</h1>
 
       <PieChart width={500} height={500}>

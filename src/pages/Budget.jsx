@@ -1,46 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Nav from "../components/Nav";
 
 function Budget() {
-  // let navigatee = useNavigate();
-
-  // function handleChart(e) {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigatee("/chartPage");
-  // }
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigate("/login");
-  // };
-
-  // const save = async (e) => {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigate("/chartPage");
-  // };
-
   return (
     <div className="budget-container">
-      <nav className="navbar">
-        <div class="nav-title">𑁍DDJ Budget Hub</div>
-        <NavLink to="/login" className="nav-item">
-          Home
-        </NavLink>
-        {/* <NavLink to="/budget" className="nav-item">
-          Budget
-        </NavLink> */}
-        &nbsp; &nbsp; &nbsp; &nbsp;
-        <NavLink to="/chartPage" className="nav-item">
-          Chart
-        </NavLink>
-      </nav>
-
+      <Nav />
       <h2 className="budget-title">
         Budget{" "}
         <span>
@@ -113,7 +77,6 @@ function Budget() {
         </div>
 
         <button type="button" className="save-button">
-          {/* onClick={save} */}
           Save
         </button>
       </form>
