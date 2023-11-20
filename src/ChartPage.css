@@ -125,7 +125,8 @@ h1 {
   width: 200px;
 }
 
-/* .PieChart {
-  width: 800px;
-  height: 800px;
+/* @media only screen and (min-width: 600px) and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
 } */
