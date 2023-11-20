@@ -1,10 +1,37 @@
-function ChartPage() {
+import React from "react";
+import "./ChartPage.css";
+import { PieChart, Pie, Tooltip } from "recharts";
+
+const ChartPage = () => {
+  const data = [
+    { name: "Income", value: 3000000000 },
+    { name: "Housing", value: 100000000 },
+    { name: "Groceries", value: 100000000 },
+    { name: "Utilities", value: 100000000 },
+    { name: "Transportation", value: 100000000 },
+    { name: "Savings", value: 100000000 },
+    { name: "Banks", value: 100000000 },
+    { name: "Entertainment", value: 100000000 },
+    { name: "Miscellaneous", value: 100000000 },
+  ];
+
   return (
-    <div className="App">
-      <h1>Hello Chart</h1>
-    </div>
+    <PieChart width={400} height={400}>
+      <Pie
+        dataKey="value"
+        isAnimationActive={false}
+        data={data}
+        cx="50%"
+        cy="50%"
+        outerRadius={80}
+        fill="#8884d8"
+        label
+      />
+
+      <Tooltip />
+    </PieChart>
   );
-}
+};
 
 export default ChartPage;
 
