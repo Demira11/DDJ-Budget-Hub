@@ -32,14 +32,14 @@ const ChartPage = () => {
       </nav>
       <h1 className="chart-title">Overview Chart</h1>
 
-      <PieChart width={400} height={400}>
+      <PieChart width={500} height={500}>
         <Pie
           dataKey="value"
           isAnimationActive={true}
           data={data}
           cx="50%"
           cy="50%"
-          outerRadius={80}
+          outerRadius={100}
           fill="#8884d8"
           label
         />
