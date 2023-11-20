@@ -1,16 +1,7 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Budget() {
-  // let navigate = useNavigate();
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigate("/login");
-  // }
-
   // let navigatee = useNavigate();
 
   // function handleChart(e) {
@@ -20,25 +11,25 @@ function Budget() {
   //   navigatee("/chartPage");
   // }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    console.log("submitted");
-    navigate("/login");
-  };
+  //   console.log("submitted");
+  //   navigate("/login");
+  // };
 
-  const save = async (e) => {
-    e.preventDefault();
+  // const save = async (e) => {
+  //   e.preventDefault();
 
-    console.log("submitted");
-    navigate("/chartPage");
-  };
+  //   console.log("submitted");
+  //   navigate("/chartPage");
+  // };
 
   return (
     <div className="budget-container">
       <nav className="navbar">
         <div class="nav-title">𑁍DDJ Budget Hub</div>
-        <NavLink to="/" className="nav-item">
+        <NavLink to="/login" className="nav-item">
           Home
         </NavLink>
         {/* <NavLink to="/budget" className="nav-item">
@@ -121,7 +112,8 @@ function Budget() {
           </div>
         </div>
 
-        <button type="button" className="save-button" onClick={save}>
+        <button type="button" className="save-button">
+          {/* onClick={save} */}
           Save
         </button>
       </form>
