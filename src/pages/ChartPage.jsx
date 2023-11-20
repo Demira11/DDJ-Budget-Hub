@@ -1,26 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { Doughnut } from "react-chartjs-2";
 
 function ChartPage() {
-  const data = {
-    labels: ["Yes", "No"],
-    datasets: [
-      {
-        label: "Poll",
-        data: [3, 6],
-        backgroundColor: ["pink", "beige"],
-        borderColor: ["white"],
-      },
-    ],
-  };
+  const location = useLocation();
+  const chartData = location.state?.data || {}; // Access the chart data from the location state
 
   const options = {
     plugins: {
       tooltip: {
         callbacks: {
           label: function (context) {
-            return context.parsed + " votes";
+            return context.parsed.toString;
           },
         },
       },
@@ -37,7 +28,6 @@ function ChartPage() {
         <NavLink to="/budget" className="nav-item">
           Budget
         </NavLink>
-
         <NavLink to="/logout" className="nav-item">
           Logout
         </NavLink>
@@ -46,7 +36,7 @@ function ChartPage() {
       <h1 className="chart-title">Overview Chart</h1>
 
       <div className="chart-container">
-        <Doughnut className="chart" data={data} options={options}></Doughnut>
+        <Doughnut className="chart" data={chartData} options={options}></Doughnut>
       </div>
 
       <div className="button-container">

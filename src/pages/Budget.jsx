@@ -1,38 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import generateChartData from "./seed"; // Import the seed function
 
 function Budget() {
-  // let navigate = useNavigate();
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigate("/login");
-  // }
-
-  // let navigatee = useNavigate();
-
-  // function handleChart(e) {
-  //   e.preventDefault();
-
-  //   console.log("submitted");
-  //   navigatee("/chartPage");
-  // }
+  const navigate = useNavigate();
+  const [budgetData, setBudgetData] = useState({
+    housing: 0,
+    utilities: 0,
+    groceries: 0,
+    transportation: 0,
+    savings: 0,
+    banks: 0,
+    entertainment: 0,
+    miscellaneous: 0,
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     console.log("submitted");
     navigate("/login");
   };
 
   const save = async (e) => {
     e.preventDefault();
-
     console.log("submitted");
-    navigate("/chartPage");
+    navigate("/chartPage", { state: { data: generateChartData(budgetData) } });
   };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setBudgetData((prevData) => ({
+      ...prevData,
+      [id]: parseFloat(value) || 0, // Convert value to a float or set to 0 if conversion fails
+    }));
+  };
+
 
   return (
     <div className="budget-container">
