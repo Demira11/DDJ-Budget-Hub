@@ -32,7 +32,9 @@ const ChartPage = ({ budget }) => {
           })}
           cx="50%"
           cy="50%"
+
           outerRadius={175}
+
           fill="#8884d8"
           label
         />

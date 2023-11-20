@@ -97,8 +97,9 @@ input::placeholder {
 .left-categories label,
 .right-categories label {
   position: absolute;
-  color: #d4b0b5;
-  font-size: 16px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   margin-left: -335px;
   margin-top: 20px;
 }
@@ -141,7 +142,7 @@ input::placeholder {
 .input-container label {
   position: absolute;
   top: -30px;
-  left: 665px;
+  left: 652px;
   color: #d4b0b5;
   font-size: 16px;
 }
