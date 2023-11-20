@@ -4,7 +4,7 @@ import Nav from "../components/Nav";
 function Budget() {
   return (
     <div className="budget-container">
-      <Nav />
+      <Nav title="budget" />
       <h2 className="budget-title">
         Budget{" "}
         <span>

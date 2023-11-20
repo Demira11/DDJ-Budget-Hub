@@ -19,7 +19,7 @@ const ChartPage = () => {
 
   return (
     <div className="chartPage-container">
-      <Nav />
+      <Nav title="chart" />
       <h1 className="chart-title">Overview Chart</h1>
 
       <PieChart width={500} height={500}>
