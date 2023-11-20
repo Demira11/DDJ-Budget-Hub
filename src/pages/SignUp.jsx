@@ -1,15 +1,63 @@
-import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signUp } from "../services/users.js";
 
-function SignUp() {
-  let navigate = useNavigate();
+const SignUp = (props) => {
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+    isError: false,
+    errorMsg: "",
+  });
 
-    console.log("submitted");
-    navigate("/budget");
-  }
+  const handleChange = (event) =>
+    setForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+
+  const onSignUp = async (event) => {
+    event.preventDefault();
+    const { setUser } = props;
+    try {
+      const user = await signUp(form);
+      setUser(user);
+      navigate("/budget");
+    } catch (error) {
+      console.error(error);
+      setForm({
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
+        isError: true,
+        errorMsg: "Sign Up Details Invalid",
+      });
+    }
+  };
+
+  const renderError = () => {
+    const toggleForm = form.isError ? "danger" : "";
+    if (form.isError) {
+      return (
+        <button type="submit" className={toggleForm}>
+          {form.errorMsg}
+        </button>
+      );
+    } else {
+      return (
+        <button type="submit" className="sign-up-button">
+          Sign Up
+        </button>
+      );
+    }
+  };
+
+  const { username, email, password, passwordConfirmation } = form;
 
   return (
     <div className="login-container">
@@ -24,25 +72,56 @@ function SignUp() {
 
         <p>Create an account</p>
         <p className="small-text-login">Let's get started</p>
-        <form className="form-container" onSubmit={handleSubmit}>
+        <form className="form-container" onSubmit={onSignUp}>
           <div className="input-container">
-            <label htmlFor="name"></label>
-            <input type="text" id="name" placeholder="Name" />
+            <label htmlFor="username"></label>
+            <input
+              required
+              type="text"
+              name="username"
+              value={username}
+              placeholder="Enter username"
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-container">
             <label htmlFor="email"></label>
-            <input type="email" id="email" placeholder="Email" />
+            <input
+              required
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Enter email"
+              onChange={handleChange}
+            />
           </div>
 
           <div className="input-container">
             <label htmlFor="password"></label>
-            <input type="password" id="password" placeholder="Password" />
+            <input
+              required
+              name="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
           </div>
 
-          <button type="submit" className="sign-up-button">
-            Sign Up
-          </button>
+          <div className="input-container">
+            <label>Password Confirmation</label>
+            <input
+              required
+              name="passwordConfirmation"
+              value={passwordConfirmation}
+              type="password"
+              placeholder="Confirm Password"
+              onChange={handleChange}
+            />
+          </div>
+
+          {renderError()}
         </form>
         <p className="small-text">
           Already have an account? <a href="/login">Log In</a>
@@ -50,6 +129,6 @@ function SignUp() {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp;
