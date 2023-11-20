@@ -8,6 +8,7 @@ const SignUp = (props) => {
   const [form, setForm] = useState({
     username: "",
     email: "",
+    income: "",
     password: "",
     passwordConfirmation: "",
     isError: false,
@@ -57,7 +58,7 @@ const SignUp = (props) => {
     }
   };
 
-  const { username, email, password, passwordConfirmation } = form;
+  const { username, email, income, password, passwordConfirmation } = form;
 
   return (
     <div className="login-container">
@@ -93,6 +94,18 @@ const SignUp = (props) => {
               name="email"
               value={email}
               placeholder="Enter email"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="input-container">
+            <label htmlFor="income"></label>
+            <input
+              required
+              type="text"
+              name="income"
+              placeholder="Enter Budget"
+              value={income}
               onChange={handleChange}
             />
           </div>
