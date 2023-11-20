@@ -47,3 +47,30 @@ export const addInitialExpensesToBudget = async (budgetId, expensesData) => {
     console.error(error);
   }
 };
+
+export const deleteExpense = async (expenseId) => {
+  try {
+    const response = await api.delete(`/expense/${expenseId}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const addExpense = async (budgetId, bugetData) => {
+  try {
+    const response = await api.put(`/expense/budget/${budgetId}`, bugetData);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const updateExpense = async (expenseId, expenseData) => {
+  try {
+    const response = await api.put(`/expense/${expenseId}`, expenseData);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
