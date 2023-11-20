@@ -12,7 +12,7 @@ export const signUp = async (credentials) => {
   }
 };
 
-export const signIn = async (credentials) => {
+export const login = async (credentials) => {
   try {
     const resp = await api.post("/sign-in", credentials);
     localStorage.setItem("token", resp.data.token);

@@ -6,20 +6,32 @@ import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
 import Budget from "./pages/Budget.jsx";
 import ChartPage from "./pages/ChartPage.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "chart.js/auto";
+import { useState, useEffect } from "react";
+import { verifyUser } from "./services/users.js";
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
+    };
+    fetchUser();
+  }, []);
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/budget" element={<Budget />} />
-        <Route path="/chartPage" element={<ChartPage />} />
+        <Route path="/" element={<SignUp setUser={setUser} />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/budget" element={<Budget setUser={setUser} />} />
+        <Route path="/chartPage" element={<ChartPage setUser={setUser} />} />
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
