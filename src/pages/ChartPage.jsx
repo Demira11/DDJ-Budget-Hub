@@ -5,15 +5,15 @@ import { NavLink } from "react-router-dom"; // Make sure to import NavLink if yo
 
 const ChartPage = () => {
   const data = [
-    { name: "Income", value: 2000000000 },
-    { name: "Housing", value: 100000000 },
-    { name: "Groceries", value: 100000000 },
-    { name: "Utilities", value: 100000000 },
-    { name: "Transportation", value: 100000000 },
-    { name: "Savings", value: 100000000 },
-    { name: "Banks", value: 100000000 },
-    { name: "Entertainment", value: 100000000 },
-    { name: "Miscellaneous", value: 100000000 },
+    { name: "Income", value: 5000 },
+    { name: "Housing", value: 3000 },
+    { name: "Groceries", value: 600 },
+    { name: "Utilities", value: 850 },
+    { name: "Transportation", value: 730 },
+    { name: "Savings", value: 6000 },
+    { name: "Banks", value: 890 },
+    { name: "Entertainment", value: 125 },
+    { name: "Miscellaneous", value: 678 },
   ];
 
   return (
@@ -30,6 +30,7 @@ const ChartPage = () => {
           Logout
         </NavLink>
       </nav>
+      <h1 className="chart-title">Overview Chart</h1>
 
       <PieChart width={400} height={400}>
         <Pie
@@ -44,6 +45,10 @@ const ChartPage = () => {
         />
         <Tooltip />
       </PieChart>
+      <div className="button-container">
+        <button className="button delete-button">Delete</button>
+        <button className="button edit-button">Edit</button>{" "}
+      </div>
     </div>
   );
 };
