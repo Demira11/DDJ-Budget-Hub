@@ -153,6 +153,7 @@ input::placeholder {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  color: #9d775c;
 }
 
 .expense-item {
