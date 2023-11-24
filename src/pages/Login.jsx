@@ -94,6 +94,9 @@ const Login = (props) => {
 
           {renderError()}
         </form>
+        <p className="small-text">
+          Don't have an account? <a href="/">Sign Up!!</a>
+        </p>
       </div>
     </div>
   );
